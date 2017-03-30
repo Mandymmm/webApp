@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端 左图右文 图片加载</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--禁止页面缩放-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        #oUls {
+            padding: 10px;
+        }
+        #oUls li {
+            border-bottom: 1px dashed #999;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        #oUls li div:nth-child(1){
+            position: absolute;
+            width:60px;
+            height: 60px;
+        }
+        #oUls li div:nth-child(1) img{
+            width:100%;
+            height:100%;
+            background: url("./images/default.png") no-repeat center;
+            background-size: cover;
+
+        }
+        #oUls li div:nth-child(2){
+            margin-left:70px;
+        }
+        #oUls li div:nth-child(2) h3{
+            /*单行省略*/
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 16px;
+        }
+        #oUls li div:nth-child(2) p{
+            /*多行省略*/
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2 ;/*指定2行省略*/
+            font-size: 14px;
+            color: darkgrey;
+        }
+        #back {
+            position: fixed;
+            right: 15px;
+            bottom: 50px;
+            width: 40px;
+            height: 40px;
+            background: url("./images/arrow.png") no-repeat center;
+            background-size: 30px;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 50%;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<i id="back"></i>
+<ul id="oUls">
+   <!-- <li>
+        <div>
+            <img src="images/1.jpg" alt="">
+        </div>
+        <div>
+            <h3>习近平29日上午参加首都义务植树活动</h3>
+            <p>央视网消息(新闻联播)：中共中央总书记、国家主席、中央军委主席习近平29日上午在参加首都义务植树活动时强调，植树造林，种下的既是绿色树苗，也是祖国的美好未来。</p>
+        </div>
+    </li>-->
+</ul>
+
+<script src="js/utils.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
